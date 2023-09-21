@@ -14,9 +14,17 @@ import {
     /////
     //GETS ALL CURRENT MOVIES IN JSON LIST
     const movies = await getMovies();
-    //CREATES LIST FROM SEARCH VALUE
-    const movie = await pullMoviesFromApi("Avengers")
-    //LOOPS THROUGH SEARCH RESULTS AND DISPLAYS THEM
-    searchLoop(movie)
+
+    let userInput = "";
+
+        let searchBtn = document.querySelector("button")
+        searchBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            userInput = document.querySelector('#input-field').value
+            //CREATES LIST FROM SEARCH VALUE
+          const movie = await pullMoviesFromApi(userInput)
+            //LOOPS THROUGH SEARCH RESULTS AND DISPLAYS THEM
+          searchLoop(movie)
+        })
 
 })();
