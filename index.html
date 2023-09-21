@@ -39,7 +39,67 @@
 <!--</div>-->
 
 
+
 <div class="movies-grid"></div>
+<!--TODO: form for Add function-->
+<form>
+	<!--Title input-->
+	<label for="title">Name of the Movie:
+		<input id="title" name="title" type="text">
+	</label>
+	<!--description textarea-->
+	<label for="summary">Give a brief summary.
+		<textarea id="summary" name="summary" placeholder="Movie Summary"></textarea>
+	</label>
+	<!--year input-->
+	<label>Select a year the movie was created
+		<select id="ddlYears">
+			<option>Select</option>
+		</select>
+	</label>
+	<!--category select-->
+	<div id="checkboxes">
+		<label>Genre</label>
+		<ul>
+			<li><label><input type="checkbox" name="categories" value="Action">Action</label></li>
+			<li><input type="checkbox" name="categories" value="Adventure">Adventure</li>
+			<li><input type="checkbox" name="categories" value="Animation">Animation</li>
+			<li><input type="checkbox" name="categories" value="Crime">Crime</li>
+			<li><input type="checkbox" name="categories" value="Documentary">Documentary</li>
+			<li><input type="checkbox" name="categories" value="Drama">Drama</li>
+			<li><input type="checkbox" name="categories" value="Family">Family</li>
+			<li><input type="checkbox" name="categories" value="Fantasy">Fantasy</li>
+			<li><input type="checkbox" name="categories" value="History">History</li>
+			<li><input type="checkbox" name="categories" value="Horror">Horror</li>
+			<li><input type="checkbox" name="categories" value="Music">Music</li>
+			<li><input type="checkbox" name="categories" value="Mystery">Mystery</li>
+			<li><input type="checkbox" name="categories" value="Romance">Romance</li>
+			<li><input type="checkbox" name="categories" value="Science Fiction">Science Fiction</li>
+			<li><input type="checkbox" name="categories" value="TV Movie">TV Movie</li>
+			<li><input type="checkbox" name="categories" value="Thriller">Thriller</li>
+			<li><input type="checkbox" name="categories" value="War">War</li>
+			<li><input type="checkbox" name="categories" value="Western">Western</li>
+		</ul>
+	</div>
+	<!--rating-->
+	<label for="rating">Movie Rating
+		<select id="rating">
+			<option>Select</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+		</select>
+	</label>
+	<button id="add-btn" type="button">Add</button>
+</form>
+  
 <script type="module" src="./js/index.js"></script>
 </body>
 </html>

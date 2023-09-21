@@ -3,12 +3,12 @@
     {
       "id": 1,
       "title": "Shrek",
-      "rating": 7,
+      "rating": 10,
       "cover": "https://www.themoviedb.org/t/p/w188_and_h282_bestv2/dyhaB19AICF7TO7CK2aD6KfymnQ.jpg",
-      "summary": "jcbksajbvsd lofhweoiwoifhnowie fh iowpioefh woihfoi ofh ohcoiehfoiw hoifh oifhwoeih flh",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "year": 2001,
       "categories": [
-        "fear"
+        "comedy", "adventure", "fantasy", "action"
       ]
     }
   ]
