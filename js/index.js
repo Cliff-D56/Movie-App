@@ -19,6 +19,7 @@ import {
     /////
     //GETS ALL CURRENT MOVIES IN JSON LIST
     const movies = await getMovies();
+
     //CREATES LIST FROM SEARCH VALUE
     const movie = await pullMoviesFromApi("Avengers")
     //LOOPS THROUGH SEARCH RESULTS AND DISPLAYS THEM
@@ -28,5 +29,6 @@ import {
         const target = document.querySelector(".movies-grid");
         renderMovie(movie,target)
     }
+
 
 })();
