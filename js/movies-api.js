@@ -1,3 +1,5 @@
+import {TMDB_KEY} from "./keys.js";
+
 const getMovies = async () => {
     const url = "http://localhost:3000/movies"
     const options = {
