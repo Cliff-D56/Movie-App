@@ -140,5 +140,10 @@ const renderMovie = (movieObj, target) => {
     target.appendChild(movieCard)
 }
 
+const searchLoop = (movie)=>{
+    for (let i=0;i<movie.results.length;i++){
+        console.log(movie.results[i].title)
+    }
+}
 
-export {getMovies, getMovie, searchMovieByTitle, postMovie, deleteMovie, patchMovie, renderMovie, renderCategories, TMDB_KEY, pullMoviesFromApi}
+export {getMovies, getMovie, searchMovieByTitle, postMovie, deleteMovie, patchMovie, renderMovie, renderCategories, TMDB_KEY, pullMoviesFromApi,searchLoop}
