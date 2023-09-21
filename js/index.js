@@ -6,15 +6,17 @@ import {
     postMovie,
     deleteMovie,
     renderMovie,
-    renderCategories, pullMoviesFromApi} from "./movies-api.js";
+    renderCategories, pullMoviesFromApi,searchLoop} from "./movies-api.js";
 
 
 //Main Method
 (async () => {
     /////
-    //GETS ALL CURRENT MOVIES IN LIST
+    //GETS ALL CURRENT MOVIES IN JSON LIST
     const movies = await getMovies();
-    const movie = await pullMoviesFromApi()
-    console.log(movie);
+    //CREATES LIST FROM SEARCH VALUE
+    const movie = await pullMoviesFromApi("Avengers")
+    //LOOPS THROUGH SEARCH RESULTS AND DISPLAYS THEM
+    searchLoop(movie)
 
 })();
