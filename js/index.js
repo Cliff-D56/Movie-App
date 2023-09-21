@@ -15,6 +15,14 @@ import {
     //GETS ALL CURRENT MOVIES IN LIST
     const movies = await getMovies();
     const movie = await pullMoviesFromApi()
-    console.log(movie);
+    let userInput = "";
+
+        let searchBtn = document.querySelector("button")
+        searchBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            userInput = document.querySelector('#input-field').value
+            console.log(userInput);
+
+        })
 
 })();
