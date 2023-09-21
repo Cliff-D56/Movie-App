@@ -9,6 +9,11 @@ import {
     renderCategories, pullMoviesFromApi,searchLoop} from "./movies-api.js";
 
 
+
+
+
+
+
 //Main Method
 (async () => {
     /////
@@ -18,5 +23,10 @@ import {
     const movie = await pullMoviesFromApi("Avengers")
     //LOOPS THROUGH SEARCH RESULTS AND DISPLAYS THEM
     searchLoop(movie)
+    console.log(movies)
+    for (let movie of movies){
+        const target = document.querySelector(".movies-grid");
+        renderMovie(movie,target)
+    }
 
 })();

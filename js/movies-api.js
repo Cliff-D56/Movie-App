@@ -120,23 +120,58 @@ const renderCategories = (categories) => {
         ).join('')
 }
 
-const renderMovie = (movieObj, target) => {
-    const movieCard = document.createElement('article');
-    movieCard.classList.add('movie-card');
+// const renderMovie = (movieObj, target) => {
+//     const movieCard = document.createElement('article');
+//     movieCard.classList.add('movie-card');
+//     movieCard.innerHTML = `
+//         <div class="movie-card-title">${movieObj.title}</div>
+//         <p class="movie-card-year">${movieObj.year}</p>
+//         <p class="movie-card-description">${movieObj.description}</p>
+//         <div class="d-flex align-item-center justify-content-between">
+//             <span class="movie-card-rating">Rating</span>
+//             <span class="movie-card-span">${movieObj.rating}</span>
+//         </div>
+//         <meter value=${movieObj.rating} min="0" max="10" class="movie-card-meter"></meter>
+//         <div class="d-flex align-item-center justify-content-start gap-10 flex-wrap">
+//             ${renderCategories(movieObj.categories)}
+//         </div>
+//     `;
+//
+//     target.appendChild(movieCard)
+// }
+const renderMovie = (movie,target)=>{
+    const movieCard=document.createElement('div')
+    movieCard.classList.add('card')
     movieCard.innerHTML = `
-        <div class="movie-card-title">${movieObj.title}</div>
-        <p class="movie-card-year">${movieObj.year}</p>
-        <p class="movie-card-description">${movieObj.description}</p>
-        <div class="d-flex align-item-center justify-content-between">
-            <span class="movie-card-rating">Rating</span>
-            <span class="movie-card-span">${movieObj.rating}</span>
-        </div>
-        <meter value=${movieObj.rating} min="0" max="10" class="movie-card-meter"></meter>
-        <div class="d-flex align-item-center justify-content-start gap-10 flex-wrap">
-            ${renderCategories(movieObj.categories)}
-        </div>
+<img src="https://image.tmdb.org/t/p/original/78lPtwv72eTNqFW9COBYI0dWDJa.jpg">
+<div class="card-body">
+<div class="d-flex justify-content-between">
+<h5 class="movie-title">${movie.title}</h5>
+<p class="movie-card-year">${movie.year}</p>
+<div class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="assets/dots-vertical.svg"></a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="#">Edit Info</a></li>
+<li><a class="dropdown-item" href="#">Delete Movie</a></li>
+</ul>
+</div>
+</div>
+<p class="movie-summary">${movie.summary}</p>
+<!--TODO LINK RATING TO METER VALUE-->
+</div>
+        <div class="d-flex align-items-center justify-content-start gap-10 flex-wrap">
+            ${movie.categories
+        .map(
+            (category)=>`
+                <span class="movie-card-tag">${category}</span>
+                `
+        )
+        .join('')}
+      </div>
+<meter class="movie-card-meter container-fluid" min="0" max="10" value=${movie.rating}></meter>
+<a href="#" class="btn btn-primary">Add as Favorite</a>
+<a href="#" class="btn btn-primary">Watch Trailer</a>
     `;
-
     target.appendChild(movieCard)
 }
 
