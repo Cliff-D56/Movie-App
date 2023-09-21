@@ -1,5 +1,20 @@
 import {TMDB_KEY} from "./keys.js";
 
+
+const pullMoviesFromApi = async (input) => {
+    const url = `https://api.themoviedb.org/3/search/movie?query=${input}`
+    const options = {
+        "method": "GET",
+        "headers": {
+            "Content-Type": "application/json",
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYjQ4NTliZDBiNTRjZjQ4Nzc1OWExY2E4ZWQ5OGZjOCIsInN1YiI6IjY1MGM1OTYzOTNkYjkyMDEzOGU0YTY1NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XAqnd5heKBDaJYlCQ7XHsyi5yljKz4fSSAJxWRzHHl0',
+            'accept': 'application/json'
+        }
+    }
+    const response = await fetch(url, options)
+    return await response.json()
+}
+
 const getMovies = async () => {
     const url = "http://localhost:3000/movies"
     const options = {
@@ -45,7 +60,7 @@ const postMovie = async  (movie) => {
             throw new Error("Book already Exists in the database.")
         }
         const url = "http://localhost:3000/movies";
-        const body = book
+        const body = movie
         const options = {
             method: "POST",
             headers: {
@@ -62,8 +77,7 @@ const postMovie = async  (movie) => {
 
 }
 
-
-const patchMovie = async  (book) => {
+const patchMovie = async (movie) => {
     try {
         const url = `http://localhost:3000/movies/${movie.id}`;
         const body = movie
@@ -84,11 +98,13 @@ const patchMovie = async  (book) => {
 }
 
 const searchMovieByTitle = async (title) => {
-    const url = `http://localhost:3000/movies?title=${title}`
+    const url = `https://api.themoviedb.org/3/search/movie?query=${title}`
     const options = {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYjQ4NTliZDBiNTRjZjQ4Nzc1OWExY2E4ZWQ5OGZjOCIsInN1YiI6IjY1MGM1OTYzOTNkYjkyMDEzOGU0YTY1NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XAqnd5heKBDaJYlCQ7XHsyi5yljKz4fSSAJxWRzHHl0',
+            'accept': 'application/json'
         }
     }
     const response = await fetch(url, options);
@@ -125,4 +141,4 @@ const renderMovie = (movieObj, target) => {
 }
 
 
-export {getMovies, getMovie, searchMovieByTitle, postMovie, deleteMovie, patchMovie, renderMovie, renderCategories}
+export {getMovies, getMovie, searchMovieByTitle, postMovie, deleteMovie, patchMovie, renderMovie, renderCategories, TMDB_KEY, pullMoviesFromApi}
