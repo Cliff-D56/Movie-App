@@ -3,7 +3,8 @@
     {
       "id": 1,
       "title": "Shrek",
-      "rating": 5
+      "rating": 10,
+      "cover": "https://www.themoviedb.org/t/p/w188_and_h282_bestv2/dyhaB19AICF7TO7CK2aD6KfymnQ.jpg"
     }
   ]
 }
