@@ -1,5 +1,6 @@
 import {TMDB_KEY} from "./keys.js";
 
+
 const pullMoviesFromApi = async (input) => {
     const url = `https://api.themoviedb.org/3/search/movie?query=${input}`
     const options = {
