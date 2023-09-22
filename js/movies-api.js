@@ -172,10 +172,6 @@ const movieLoop = (movies)=>{
         const target = document.querySelector(".movies-grid");
         renderMovie(movie,target)
     }
-    let card = document.getElementsByClassName('movie-title')
-    card.map( (element) => {
-        console.log(element.innerHTML)
-    })
 }
 
 const yearOfMovie = () => {
