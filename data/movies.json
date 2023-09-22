@@ -2,13 +2,30 @@
   "movies": [
     {
       "id": 1,
-      "title": "Shrek",
+      "title": "Shrek1",
       "rating": 10,
       "cover": "https://www.themoviedb.org/t/p/w188_and_h282_bestv2/dyhaB19AICF7TO7CK2aD6KfymnQ.jpg",
       "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "year": 2001,
       "categories": [
-        "comedy", "adventure", "fantasy", "action"
+        "comedy",
+        "adventure",
+        "fantasy",
+        "action"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Shrek3",
+      "rating": 10,
+      "cover": "https://www.themoviedb.org/t/p/w188_and_h282_bestv2/dyhaB19AICF7TO7CK2aD6KfymnQ.jpg",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "year": 2001,
+      "categories": [
+        "comedy",
+        "adventure",
+        "fantasy",
+        "action"
       ]
     }
   ]
