@@ -14,7 +14,7 @@ import {
 let ddlYears = document.getElementById("ddlYears");
 let currentYear = (new Date()).getFullYear();
 
-for (let i = 1950; i <= currentYear; i++) {
+for (let i = 1888; i <= currentYear; i++) {
     let option = document.createElement("OPTION");
     option.innerHTML = i;
     option.value = i;
@@ -24,18 +24,32 @@ for (let i = 1950; i <= currentYear; i++) {
 let submit = document.querySelector('#add-btn');
 submit.addEventListener('click', add)
 
-    function add (e) {
-        e.preventDefault();
-        let title = document.querySelector("#title").value
-        let summary = document.querySelector('#summary').value
-        let year = document.querySelector("#ddlYears").value
-        let rating = document.querySelector("#rating").value
-        console.log(title);
-        console.log(summary);
-        console.log(year);
-        console.log(rating);
+function add (e) {
+    e.preventDefault();
+    let title = document.querySelector("#title").value
+    let summary = document.querySelector('#summary').value
+    let year = document.querySelector("#ddlYears").value
+    let categories = document.querySelector(".categories").checked
+    let rating = document.querySelector("#rating").value
+    let checkboxes = document.getElementsByName("category[]")
+    let movie = {};
+    let results = '';
+
+    for (let i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+            results += `${checkboxes[i].value} `
+        }
     }
 
+    movie.title = title
+    movie.cover = "https://www.themoviedb.org/t/p/w188_and_h282_bestv2/dyhaB19AICF7TO7CK2aD6KfymnQ.jpg"
+    movie.year = year
+    movie.summary = summary;
+    movie.categories = results
+    movie.rating = rating
+
+
+}
 
 //Main Method
 (async () => {

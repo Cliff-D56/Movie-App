@@ -42,6 +42,7 @@
 
 <div class="movies-grid d-flex"></div>
 <!--TODO: form for Add function-->
+
 <form>
 	<!--Title input-->
 	<label for="title">Name of the Movie:
@@ -58,29 +59,26 @@
 		</select>
 	</label>
 	<!--category select-->
-	<div id="checkboxes">
-		<label>Genre</label>
-		<ul>
-			<li><label><input type="checkbox" name="categories" value="Action">Action</label></li>
-			<li><input type="checkbox" name="categories" value="Adventure">Adventure</li>
-			<li><input type="checkbox" name="categories" value="Animation">Animation</li>
-			<li><input type="checkbox" name="categories" value="Crime">Crime</li>
-			<li><input type="checkbox" name="categories" value="Documentary">Documentary</li>
-			<li><input type="checkbox" name="categories" value="Drama">Drama</li>
-			<li><input type="checkbox" name="categories" value="Family">Family</li>
-			<li><input type="checkbox" name="categories" value="Fantasy">Fantasy</li>
-			<li><input type="checkbox" name="categories" value="History">History</li>
-			<li><input type="checkbox" name="categories" value="Horror">Horror</li>
-			<li><input type="checkbox" name="categories" value="Music">Music</li>
-			<li><input type="checkbox" name="categories" value="Mystery">Mystery</li>
-			<li><input type="checkbox" name="categories" value="Romance">Romance</li>
-			<li><input type="checkbox" name="categories" value="Science Fiction">Science Fiction</li>
-			<li><input type="checkbox" name="categories" value="TV Movie">TV Movie</li>
-			<li><input type="checkbox" name="categories" value="Thriller">Thriller</li>
-			<li><input type="checkbox" name="categories" value="War">War</li>
-			<li><input type="checkbox" name="categories" value="Western">Western</li>
-		</ul>
-	</div>
+	<label id="categories">Genre
+		<input type="checkbox" class="categories" name="category[]" value="Action">Action
+		<input type="checkbox" class="categories" name="category[]" value="Adventure">Adventure
+		<input type="checkbox" class="categories" name="category[]" value="Animation">Animation
+		<input type="checkbox" class="categories" name="category[]" value="Crime">Crime
+		<input type="checkbox" class="categories" name="category[]" value="Documentary">Documentary
+		<input type="checkbox" class="categories" name="category[]" value="Drama">Drama
+		<input type="checkbox" class="categories" name="category[]" value="Family">Family
+		<input type="checkbox" class="categories" name="category[]" value="Fantasy">Fantasy
+		<input type="checkbox" class="categories" name="category[]" value="History">History
+		<input type="checkbox" class="categories" name="category[]" value="Horror">Horror
+		<input type="checkbox" class="categories" name="category[]" value="Music">Music
+		<input type="checkbox" class="categories" name="category[]" value="Mystery">Mystery
+		<input type="checkbox" class="categories" name="category[]" value="Romance">Romance
+		<input type="checkbox" class="categories" name="category[]" value="Science Fiction">Science Fiction
+		<input type="checkbox" class="categories" name="category[]" value="TV Movie">TV Movie
+		<input type="checkbox" class="categories" name="category[]" value="Thriller">Thriller
+		<input type="checkbox" class="categories" name="category[]" value="War">War
+		<input type="checkbox" class="categories" name="category[]" value="Western">Western
+	</label>
 	<!--rating-->
 	<label for="rating">Movie Rating
 		<select id="rating">
