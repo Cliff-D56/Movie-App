@@ -120,28 +120,13 @@ const renderCategories = (categories) => {
         ).join('')
 }
 
-// const renderMovie = (movieObj, target) => {
-//     const movieCard = document.createElement('article');
-//     movieCard.classList.add('movie-card');
-//     movieCard.innerHTML = `
-//         <div class="movie-card-title">${movieObj.title}</div>
-//         <p class="movie-card-year">${movieObj.year}</p>
-//         <p class="movie-card-description">${movieObj.description}</p>
-//         <div class="d-flex align-item-center justify-content-between">
-//             <span class="movie-card-rating">Rating</span>
-//             <span class="movie-card-span">${movieObj.rating}</span>
-//         </div>
-//         <meter value=${movieObj.rating} min="0" max="10" class="movie-card-meter"></meter>
-//         <div class="d-flex align-item-center justify-content-start gap-10 flex-wrap">
-//             ${renderCategories(movieObj.categories)}
-//         </div>
-//     `;
-//
-//     target.appendChild(movieCard)
-// }
+const renderModal =()=>{
+
+}
 const renderMovie = (movie,target)=>{
     const movieCard=document.createElement('div')
     movieCard.classList.add('card')
+    movieCard.setAttribute("data-id",`${movie.id}`)
     movieCard.innerHTML = `
 <img src=${movie.cover}>
 <div class="card-body">
@@ -151,8 +136,8 @@ const renderMovie = (movie,target)=>{
 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="assets/dots-vertical.svg"></a>
 <div class="nav-item dropdown">
 <ul class="dropdown-menu">
-<li><a class="dropdown-item" href="#">Edit Info</a></li>
-<li><button class="dropdown-item btnn deletebutton" id="${movie.id}">Delete Movie</button></li>
+<li><button class="dropdown-item btn editbutton" id="M${movie.id}"data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Info</button></li>
+<li><button class="dropdown-item btn deletebutton"  id="${movie.id}">Delete Movie</button></li>
 </ul>
 </div>
 </div>
@@ -186,4 +171,5 @@ const movieLoop = (movies)=>{
         renderMovie(movie,target)
     }
 }
-export {getMovies, getMovie, searchMovieByTitle, postMovie, deleteMovie, patchMovie, renderMovie, renderCategories, TMDB_KEY, pullMoviesFromApi,searchLoop,movieLoop}
+
+export {getMovies, getMovie, searchMovieByTitle, postMovie, deleteMovie, patchMovie, renderMovie, renderCategories, TMDB_KEY, pullMoviesFromApi,searchLoop,movieLoop,renderModal}
