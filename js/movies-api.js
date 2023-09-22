@@ -143,27 +143,26 @@ const renderMovie = (movie,target)=>{
     const movieCard=document.createElement('div')
     movieCard.classList.add('card')
     movieCard.innerHTML = `
-<img src="https://image.tmdb.org/t/p/original/78lPtwv72eTNqFW9COBYI0dWDJa.jpg">
+<img src=${movie.cover}>
 <div class="card-body">
 <div class="d-flex justify-content-between">
 <h5 class="movie-title">${movie.title}</h5>
 <p class="movie-card-year">${movie.year}</p>
-<div class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="assets/dots-vertical.svg"></a>
+<div class="nav-item dropdown">
 <ul class="dropdown-menu">
 <li><a class="dropdown-item" href="#">Edit Info</a></li>
-<li><a class="dropdown-item" href="#">Delete Movie</a></li>
+<li><button class="dropdown-item btnn deletebutton" id="${movie.id}">Delete Movie</button></li>
 </ul>
 </div>
 </div>
 <p class="movie-summary">${movie.summary}</p>
-<!--TODO LINK RATING TO METER VALUE-->
 </div>
-        <div class="d-flex align-items-center justify-content-start gap-10 flex-wrap">
+        <div class="d-flex align-items-center justify-content-between gap-10 flex-wrap">
             ${movie.categories
         .map(
             (category)=>`
-                <span class="movie-card-tag">${category}</span>
+                <span class="movie-card-tag">${category} </span>
                 `
         )
         .join('')}
@@ -180,5 +179,11 @@ const searchLoop = (movie)=>{
         console.log(movie.results[i].title)
     }
 }
-
-export {getMovies, getMovie, searchMovieByTitle, postMovie, deleteMovie, patchMovie, renderMovie, renderCategories, TMDB_KEY, pullMoviesFromApi,searchLoop}
+const movieLoop = (movies)=>{
+    $(".movies-grid").html("")
+    for (let movie of movies){
+        const target = document.querySelector(".movies-grid");
+        renderMovie(movie,target)
+    }
+}
+export {getMovies, getMovie, searchMovieByTitle, postMovie, deleteMovie, patchMovie, renderMovie, renderCategories, TMDB_KEY, pullMoviesFromApi,searchLoop,movieLoop}

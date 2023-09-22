@@ -6,7 +6,7 @@ import {
     postMovie,
     deleteMovie,
     renderMovie,
-    renderCategories, pullMoviesFromApi,searchLoop} from "./movies-api.js";
+    renderCategories, pullMoviesFromApi,searchLoop,movieLoop} from "./movies-api.js";
 
 
 
@@ -41,16 +41,21 @@ submit.addEventListener('click', add)
 (async () => {
     /////
     //GETS ALL CURRENT MOVIES IN JSON LIST
-    const movies = await getMovies();
+    let movies = await getMovies();
 
     //CREATES LIST FROM SEARCH VALUE
-    const movie = await pullMoviesFromApi("Avengers")
+    const movie = await pullMoviesFromApi("Shrek")
     //LOOPS THROUGH SEARCH RESULTS AND DISPLAYS THEM
     searchLoop(movie)
     console.log(movies)
-    for (let movie of movies){
-        const target = document.querySelector(".movies-grid");
-        renderMovie(movie,target)
-    }
+    movieLoop(movies)
 
+    $(".deletebutton").on("click",async function () {
+        $(this)
+        deleteMovie(this.id)
+        let movies = await getMovies()
+        movieLoop(movies)
+
+
+    })
 })();
