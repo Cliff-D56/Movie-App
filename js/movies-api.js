@@ -24,6 +24,12 @@ const getMovies = async () => {
         }
     }
 
+    let loader = document.createElement('div')
+    loader.classList.add('loading')
+    loader.innerText = 'loading...'
+
+    document.getElementsByClassName(".movies-grid").innerHTML = loader
+
     const response = await fetch(url, options)
     return await response.json()
 }
@@ -111,7 +117,6 @@ const searchMovieByTitle = async (title) => {
     return await response.json();
 }
 
-
 const renderCategories = (categories) => {
     return categories
         .map(
@@ -120,9 +125,6 @@ const renderCategories = (categories) => {
         ).join('')
 }
 
-const renderModal =()=>{
-
-}
 const renderMovie = (movie,target)=>{
     const movieCard=document.createElement('div')
     movieCard.classList.add('card')
@@ -170,6 +172,84 @@ const movieLoop = (movies)=>{
         const target = document.querySelector(".movies-grid");
         renderMovie(movie,target)
     }
+    let card = document.getElementsByClassName('movie-title')
+    card.map( (element) => {
+        console.log(element.innerHTML)
+    })
 }
 
-export {getMovies, getMovie, searchMovieByTitle, postMovie, deleteMovie, patchMovie, renderMovie, renderCategories, TMDB_KEY, pullMoviesFromApi,searchLoop,movieLoop,renderModal}
+const yearOfMovie = () => {
+    let ddlYears = document.getElementById("ddlYears");
+    let currentYear = (new Date()).getFullYear();
+
+    for (let i = 1888; i <= currentYear; i++) {
+        let option = document.createElement("OPTION");
+        option.innerHTML = i;
+        option.value = i;
+        ddlYears.appendChild(option);
+    }
+}
+
+const modal = async () => {
+
+    // Get the modal
+    let modal = document.getElementById("add-movie-modal");
+
+    // Get the button that opens the modal
+    let btn = document.getElementById("modalBtn");
+
+    // Get the <span> element that closes the modal
+    let span = document.getElementsByClassName("close")[0];
+
+    let submit = document.getElementById("add-btn")
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+        yearOfMovie()
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    submit.onclick = async (e) => {
+        e.preventDefault();
+        let title = document.querySelector("#title").value
+        let summary = document.querySelector('#summary').value
+        let year = document.querySelector("#ddlYears").value
+        let categories = document.querySelector(".categories").checked
+        let rating = document.querySelector("#rating").value
+        let checkboxes = document.getElementsByName("category[]")
+        let movie = {};
+        let results = [];
+
+        for (let i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                results.push(checkboxes[i].value)
+            }
+        }
+
+        movie.title = title
+        movie.cover = "https://www.themoviedb.org/t/p/w188_and_h282_bestv2/dyhaB19AICF7TO7CK2aD6KfymnQ.jpg"
+        movie.year = year
+        movie.summary = summary;
+        movie.categories = results
+        movie.rating = rating
+
+        let newMovie = await postMovie(movie)
+        let movies = await getMovies()
+        movieLoop(movies)
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside the modal, close it
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
+export {getMovies, getMovie, searchMovieByTitle, postMovie, deleteMovie, patchMovie, renderMovie, renderCategories, TMDB_KEY, pullMoviesFromApi,searchLoop,movieLoop, yearOfMovie, modal}
+

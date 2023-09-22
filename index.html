@@ -15,6 +15,7 @@
 	<input id="input-field" type="search">
 	<button type="button">Search</button>
 </label>
+<button id="modalBtn">Add Movie</button>
 <!--&lt;!&ndash;TODO: CREATE MOVIE CARDS&ndash;&gt;-->
 <!--<div class="card" style="width: 18rem;">-->
 <!--	<img src="https://image.tmdb.org/t/p/original/78lPtwv72eTNqFW9COBYI0dWDJa.jpg">-->
@@ -58,63 +59,73 @@
 	</div>
 </div>
 
-<div class="movies-grid d-flex"></div>
+<div class="movies-grid d-flex">Loading...</div>
 <!--TODO: form for Add function-->
+<div id="add-movie-modal" class="modal">
+	<div class="modal-content">
+		<span class="close">&times;</span>
 
-<form>
-	<!--Title input-->
-	<label for="title">Name of the Movie:
-		<input id="title" name="title" type="text">
-	</label>
-	<!--description textarea-->
-	<label for="summary">Give a brief summary.
-		<textarea id="summary" name="summary" placeholder="Movie Summary"></textarea>
-	</label>
-	<!--year input-->
-	<label>Select a year the movie was created
-		<select id="ddlYears">
-			<option>Select</option>
-		</select>
-	</label>
-	<!--category select-->
-	<label id="categories">Genre
-		<input type="checkbox" class="categories" name="category[]" value="Action">Action
-		<input type="checkbox" class="categories" name="category[]" value="Adventure">Adventure
-		<input type="checkbox" class="categories" name="category[]" value="Animation">Animation
-		<input type="checkbox" class="categories" name="category[]" value="Crime">Crime
-		<input type="checkbox" class="categories" name="category[]" value="Documentary">Documentary
-		<input type="checkbox" class="categories" name="category[]" value="Drama">Drama
-		<input type="checkbox" class="categories" name="category[]" value="Family">Family
-		<input type="checkbox" class="categories" name="category[]" value="Fantasy">Fantasy
-		<input type="checkbox" class="categories" name="category[]" value="History">History
-		<input type="checkbox" class="categories" name="category[]" value="Horror">Horror
-		<input type="checkbox" class="categories" name="category[]" value="Music">Music
-		<input type="checkbox" class="categories" name="category[]" value="Mystery">Mystery
-		<input type="checkbox" class="categories" name="category[]" value="Romance">Romance
-		<input type="checkbox" class="categories" name="category[]" value="Science Fiction">Science Fiction
-		<input type="checkbox" class="categories" name="category[]" value="TV Movie">TV Movie
-		<input type="checkbox" class="categories" name="category[]" value="Thriller">Thriller
-		<input type="checkbox" class="categories" name="category[]" value="War">War
-		<input type="checkbox" class="categories" name="category[]" value="Western">Western
-	</label>
-	<!--rating-->
-	<label for="rating">Movie Rating
-		<select id="rating">
-			<option>Select</option>
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-			<option>5</option>
-			<option>6</option>
-			<option>7</option>
-			<option>8</option>
-			<option>9</option>
-			<option>10</option>
-		</select>
-	</label>
-	<button id="add-btn" type="button">Add</button>
-</form>
+		<form id="add">
+			<!--Title input-->
+			<div class="d-flex flex-column">
+				<label for="title">Name of the Movie: </label>
+				<input id="title" name="title" type="text">
+			</div>
+
+			<!--description textarea-->
+			<div class="d-flex flex-column">
+				<label for="summary">Give a brief summary: </label>
+				<textarea id="summary" name="summary" placeholder="Movie Summary"></textarea>
+			</div>
+
+			<!--year input-->
+			<label>Select a year the movie was created:
+				<select id="ddlYears">
+					<option>Select</option>
+				</select>
+			</label>
+			<!--category select-->
+			<label id="categories">Genre
+				<input type="checkbox" class="categories" name="category[]" value="Action">Action
+				<input type="checkbox" class="categories" name="category[]" value="Adventure">Adventure
+				<input type="checkbox" class="categories" name="category[]" value="Animation">Animation
+				<input type="checkbox" class="categories" name="category[]" value="Crime">Crime
+				<input type="checkbox" class="categories" name="category[]" value="Documentary">Documentary
+				<input type="checkbox" class="categories" name="category[]" value="Drama">Drama
+				<input type="checkbox" class="categories" name="category[]" value="Family">Family
+				<input type="checkbox" class="categories" name="category[]" value="Fantasy">Fantasy
+				<input type="checkbox" class="categories" name="category[]" value="History">History
+				<input type="checkbox" class="categories" name="category[]" value="Horror">Horror
+				<input type="checkbox" class="categories" name="category[]" value="Music">Music
+				<input type="checkbox" class="categories" name="category[]" value="Mystery">Mystery
+				<input type="checkbox" class="categories" name="category[]" value="Romance">Romance
+				<input type="checkbox" class="categories" name="category[]" value="Science Fiction">Science Fiction
+				<input type="checkbox" class="categories" name="category[]" value="TV Movie">TV Movie
+				<input type="checkbox" class="categories" name="category[]" value="Thriller">Thriller
+				<input type="checkbox" class="categories" name="category[]" value="War">War
+				<input type="checkbox" class="categories" name="category[]" value="Western">Western
+			</label>
+			<!--rating-->
+			<label for="rating">Movie Rating:
+				<select id="rating">
+					<option>Select</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+				</select>
+			</label>
+			<button id="add-btn" type="button">Add</button>
+		</form>
+	</div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script type="module" src="./js/index.js"></script>
 </body>

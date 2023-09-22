@@ -6,8 +6,12 @@ import {
     postMovie,
     deleteMovie,
     renderMovie,
-    renderCategories, pullMoviesFromApi,searchLoop,movieLoop,renderModal} from "./movies-api.js";
-
+    renderCategories,
+    pullMoviesFromApi,
+    searchLoop,
+    movieLoop,
+    yearOfMovie,
+    modal} from "./movies-api.js";
 
 
 
@@ -71,6 +75,13 @@ function add (e) {
         let movies = await getMovies()
         movieLoop(movies)
     })
+
+
+
+
+    //adds a new movie to the list
+    await modal()
+
     $("button.editbutton").on("click",async function (e){
         let id = this.parentElement
             .parentElement
