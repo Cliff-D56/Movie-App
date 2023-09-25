@@ -21,10 +21,10 @@ import {
     const movies = await getMovies();
 
     //CREATES LIST FROM SEARCH VALUE
-    const movie = await pullMoviesFromApi("Shrek")
+    const movie = await pullMoviesFromApi("Death at a funeral")
     //LOOPS THROUGH SEARCH RESULTS AND DISPLAYS THEM
     searchLoop(movie)
-    console.log(movies)
+    console.log(movie)
     movieLoop(movies)
 
     $(".deletebutton").on("click",async function () {
