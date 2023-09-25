@@ -6,35 +6,12 @@ import {
     postMovie,
     deleteMovie,
     renderMovie,
-    renderCategories, pullMoviesFromApi,searchLoop,movieLoop,renderModal} from "./movies-api.js";
-
-
-
-//
-// let ddlYears = document.getElementById("ddlYears");
-// let currentYear = (new Date()).getFullYear();
-//
-// for (let i = 1950; i <= currentYear; i++) {
-//     let option = document.createElement("OPTION");
-//     option.innerHTML = i;
-//     option.value = i;
-//     ddlYears.appendChild(option);
-// }
-//
-// let submit = document.querySelector('#add-btn');
-// submit.addEventListener('click', add)
-//
-//     function add (e) {
-//         e.preventDefault();
-//         let title = document.querySelector("#title").value
-//         let summary = document.querySelector('#summary').value
-//         let year = document.querySelector("#ddlYears").value
-//         let rating = document.querySelector("#rating").value
-//         console.log(title);
-//         console.log(summary);
-//         console.log(year);
-//         console.log(rating);
-//     }
+    renderCategories,
+    pullMoviesFromApi,
+    searchLoop,
+    movieLoop,
+    yearOfMovie,
+    modal} from "./movies-api.js";
 
 
 
@@ -45,10 +22,10 @@ import {
     const movies = await getMovies();
 
     //CREATES LIST FROM SEARCH VALUE
-    const movie = await pullMoviesFromApi("Shrek")
+    const movie = await pullMoviesFromApi("Death at a funeral")
     //LOOPS THROUGH SEARCH RESULTS AND DISPLAYS THEM
     searchLoop(movie)
-    console.log(movies)
+    console.log(movie)
     movieLoop(movies)
 
     $(".deletebutton").on("click",async function () {
@@ -57,6 +34,13 @@ import {
         let movies = await getMovies()
         movieLoop(movies)
     })
+
+
+
+
+    //adds a new movie to the list
+    await modal()
+
     $("button.editbutton").on("click",async function (e){
         let id = this.parentElement
             .parentElement
