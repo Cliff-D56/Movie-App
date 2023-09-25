@@ -161,6 +161,45 @@ const renderMovie = (movie,target)=>{
     `;
     target.appendChild(movieCard)
 }
+const renderMovie2 = (movie,target)=>{
+    //TODO:REFACTOR TO INCLUDE API SEARCH
+    const movieCard=document.createElement('div')
+    movieCard.classList.add('card')
+    movieCard.setAttribute("data-id",`${movie.id}`)
+    let poster =`https://image.tmdb.org/t/p/original${movie.poster_path}`
+    movieCard.innerHTML = `
+<img src=${poster}>
+<div class="card-body">
+<div class="movie-header">
+<p class="movie-title"><strong>${movie.title}</strong></p>
+<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="assets/dots-vertical.svg"></a>
+<div class="nav-item dropdown">
+<ul class="dropdown-menu">
+<li><button class="dropdown-item btn editbutton" id="M${movie.id}"data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Info</button></li>
+<li><button class="dropdown-item btn deletebutton"  id="${movie.id}">Delete Movie</button></li>
+</ul>
+</div>
+</div>
+<p class="movie-summary">${movie.overview}</p>
+<p class="movie-card-year">Filmed in: ${movie.release_date}</p>
+</div>
+        <div class="movie-category d-flex align-items-center justify-content-center">
+            ${movie.genre_ids
+        .map(
+            (genre)=>`
+                <span class="movie-card-tag">${genre} </span>
+                `
+        )
+        .join('')}
+      </div>
+<!--TODO:MAKE VOTERS INTO RATING-->
+<meter class="movie-card-meter container-fluid" min="0" max="10" value=${movie.rating}></meter>
+<a href="#" class="btn btn-primary trailer" data-bs-toggle="modal" data-bs-target="#exampleModal">Watch Trailer</a>
+<input type="hidden" id="trailerId" value=${movie.trailer}>
+    `;
+    target.appendChild(movieCard)
+}
+
 
 const searchLoop = (movie,target)=>{
     target.innerHTML="";
@@ -187,7 +226,7 @@ const movieLoop = (movies)=>{
     $(".movies-grid").html("")
     for (let movie of movies){
         const target = document.querySelector(".movies-grid");
-        renderMovie(movie,target)
+        renderMovie2(movie,target)
     }
 }
 
@@ -264,14 +303,16 @@ const modal = async () => {
     }
 }
 const trailer = ()=>{
+    let modalTitle=document.querySelector(".modal-title")
     let modalBody = document.querySelector(".modal-body")
     let modalFtr = document.querySelector(".modal-footer")
     //TODO CREATE FUNCTION TO GET ID BY BUTTON PRESS
     let trailers = document.getElementsByClassName("trailer")
     for (let trl of trailers){
-        let video = trl.parentElement.children[6].defaultValue
-        console.log(video)
+    let title = trl.parentElement.children[1].childNodes[1].children[0].innerText
+        let video = trl.parentElement.children[5].value
         trl.addEventListener("click",function (){
+            modalTitle.innerText=`${title}`
             modalBody.innerHTML=
                 `
            <iframe width="100%" height="100%" src="${video}?autoplay=1" title="Marvel&#39;s Captain America: The Winter Soldier - Trailer 2 (OFFICIAL)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -284,5 +325,5 @@ const trailer = ()=>{
     }
 }
 
-export {getMovies, getMovie, searchMovieByTitle, postMovie, deleteMovie, patchMovie, renderMovie, renderCategories, TMDB_KEY, pullMoviesFromApi,searchLoop,movieLoop, yearOfMovie,trailer, modal}
+export {getMovies, getMovie, searchMovieByTitle, postMovie, deleteMovie, patchMovie, renderMovie2, renderCategories, TMDB_KEY, pullMoviesFromApi,searchLoop,movieLoop, yearOfMovie,trailer, modal}
 

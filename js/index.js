@@ -5,7 +5,7 @@ import {
     patchMovie,
     postMovie,
     deleteMovie,
-    renderMovie,
+    renderMovie2,
     renderCategories,
     pullMoviesFromApi,
     searchLoop,
@@ -19,11 +19,10 @@ import {
 //Main Method
 (async () => {
     /////
-
-    // TODO:SEARCH FUNCTION
     const searchbtn = document.getElementById("searchbtn")
     let modalBody = document.querySelector(".modal-body")
     let modalFtr = document.querySelector(".modal-footer")
+    // let modal = document.querySelector("")
     searchbtn.addEventListener("click",function (){
         modalFtr.innerHTML=
             `
@@ -47,6 +46,7 @@ import {
 
     //GETS ALL CURRENT MOVIES IN JSON LIST
     const movies = await getMovies();
+    console.log(movies)
 
 
     //CREATES LIST FROM SEARCH VALUE
@@ -62,7 +62,7 @@ import {
 
     //adds a new movie to the list
     await modal()
-
+    //TODO: TROUBLESHOOT EDIT BUTTON
     $("button.editbutton").on("click",async function (e){
         let id = this.parentElement
             .parentElement

@@ -1,44 +1,64 @@
 {
   "movies": [
     {
-      "id": 1,
+      "adult": false,
+      "backdrop_path": "/1RWLMyC9KcFfcaoViMiJGSSZzzr.jpg",
+      "genre_ids": [
+        28,
+        12,
+        878
+      ],
+      "id": 100402,
+      "original_language": "en",
+      "original_title": "Captain America: The Winter Soldier",
+      "overview": "After the cataclysmic events in New York with The Avengers, Steve Rogers, aka Captain America is living quietly in Washington, D.C. and trying to adjust to the modern world. But when a S.H.I.E.L.D. colleague comes under attack, Steve becomes embroiled in a web of intrigue that threatens to put the world at risk. Joining forces with the Black Widow, Captain America struggles to expose the ever-widening conspiracy while fighting off professional assassins sent to silence him at every turn. When the full scope of the villainous plot is revealed, Captain America and the Black Widow enlist the help of a new ally, the Falcon. However, they soon find themselves up against an unexpected and formidable enemy—the Winter Soldier.",
+      "popularity": 40.499,
+      "poster_path": "/tVFRpFw3xTedgPGqxW0AOI8Qhh0.jpg",
+      "release_date": "2014-03-20",
+      "title": "Captain America: The Winter Soldier",
+      "video": false,
+      "vote_average": 7.672,
+      "vote_count": 17681
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/sRvXNDItGlWCqtO3j6wks52FmbD.jpg",
+      "genre_ids": [
+        16,
+        35,
+        14,
+        12,
+        10751
+      ],
+      "id": 808,
+      "original_language": "en",
+      "original_title": "Shrek",
+      "overview": "It ain't easy bein' green -- especially if you're a likable (albeit smelly) ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches of a fire-breathing dragon, Shrek teams up with an unlikely compatriot -- a wisecracking donkey.",
+      "popularity": 125.543,
+      "poster_path": "/dyhaB19AICF7TO7CK2aD6KfymnQ.jpg",
+      "release_date": "2001-05-18",
       "title": "Shrek",
-      "rating": 7,
-      "cover": "https://www.themoviedb.org/t/p/w188_and_h282_bestv2/dyhaB19AICF7TO7CK2aD6KfymnQ.jpg",
-      "summary": "It ain't easy bein' green -- especially if you're a likable (albeit smelly) ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches of a fire-breathing dragon, Shrek teams up with an unlikely compatriot -- a wisecracking donkey.",
-      "year": 2001,
-      "categories": [
-        "comedy",
-        "adventure",
-        "fantasy",
-        "action"
-      ],
-      "trailer": "https://www.youtube.com/embed/CwXOrWvPBPk"
+      "video": false,
+      "vote_average": 7.73,
+      "vote_count": 15758
     },
     {
-      "id": 2,
-      "title": "Captain America Winter Soldier",
-      "rating": 7,
-      "cover": "https://www.themoviedb.org/t/p/w188_and_h282_bestv2/tVFRpFw3xTedgPGqxW0AOI8Qhh0.jpg",
-      "summary": "After the cataclysmic events in New York with The Avengers, Steve Rogers, aka Captain America is living quietly in Washington, D.C. and trying to adjust to the modern world. But when a S.H.I.E.L.D. colleague comes under attack, Steve becomes embroiled in a web of intrigue that threatens to put the world at risk. Joining forces with the Black Widow, Captain America struggles to expose the ever-widening conspiracy while fighting off professional assassins sent to silence him at every turn. When the full scope of the villainous plot is revealed, Captain America and the Black Widow enlist the help of a new ally, the Falcon. However, they soon find themselves up against an unexpected and formidable enemy—the Winter Soldier.",
-      "year": 2014,
-      "categories": [
-        "adventure",
-        "action"
+      "adult": false,
+      "backdrop_path": "/auBT5JgJEQjECGfC96JMmYQLpjK.jpg",
+      "genre_ids": [
+        35
       ],
-      "trailer": "https://www.youtube.com/embed/7SlILk2WMTI"
-    },
-    {
-      "id": 3,
+      "id": 34803,
+      "original_language": "en",
+      "original_title": "Death at a Funeral",
+      "overview": "Aaron's father's funeral is today at the family home, and everything goes wrong: the funeral home delivers the wrong body, his cousin accidentally drugs her fiancé, and Aaron's successful younger brother, Ryan, flies in from New York, broke but arrogant. To top it all off, a mysterious stranger wants a word with Aaron.",
+      "popularity": 19.424,
+      "poster_path": "/oBCQYMJTqV3qLjrvZ5sTZUCBky7.jpg",
+      "release_date": "2010-04-15",
       "title": "Death at a Funeral",
-      "rating": 6,
-      "cover": "https://www.themoviedb.org/t/p/w188_and_h282_bestv2/oBCQYMJTqV3qLjrvZ5sTZUCBky7.jpg",
-      "summary": "Aaron's father's funeral is today at the family home, and everything goes wrong: the funeral home delivers the wrong body, his cousin accidentally drugs her fiancé, and Aaron's successful younger brother, Ryan, flies in from New York, broke but arrogant. To top it all off, a mysterious stranger wants a word with Aaron.",
-      "year": 2010,
-      "categories": [
-        "comedy"
-      ],
-      "trailer": "https://www.youtube.com/embed/LkbR3nQqcrk"
+      "video": false,
+      "vote_average": 5.786,
+      "vote_count": 889
     }
   ]
 }
