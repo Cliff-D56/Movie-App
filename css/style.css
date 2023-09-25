@@ -1,10 +1,55 @@
 .dropdown-toggle::after{
     display: none;
 }
+.search {
+    max-width: 1100px;
+}
+.movies-grid {
+    max-width: 1100px;
+}
 .card {
     width: calc(33.333% - 20px);
 }
-
+img {
+    max-width: inherit;
+}
+/*.movie-summary {*/
+/*    max-height: 70px;*/
+/*    overflow: hidden;*/
+/*    flex: 1 0 65px;*/
+/*}*/
+.movie-category {
+   gap: 10px;
+    flex-wrap: wrap;
+}
+.movie-card-tag {
+    background-color: #e5e5e5;
+    border-radius: 8px;
+    padding: 3px 7px;
+    margin-bottom: 10px;
+}
+.movie-card-meter {
+    margin-bottom: 10px;
+}
+.movie-header {
+    /*overflow: hidden;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.movie-card-year {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.movie-title {
+    margin: 0;
+    display:inline-block;
+    justify-self: start;
+}
+/*.dropdown-toggle {*/
+/*    justify-self: end;*/
+/*}*/
 .modals {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -24,8 +69,7 @@
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    height: 80%;
+    width: 100%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -41,7 +85,7 @@
     gap: 20px;
 }
 #add-btn {
-    width: 100px
+    width: 100px;
 }
 
 .close:hover,
@@ -49,4 +93,14 @@
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+/*@keyframes loop {*/
+/*    100% {*/
+/*!*        -webkit-transform: translateX(-100%);*!*/
+/*        transform: translateX(-100%);*/
+/*    }*/
+/*}*/
+
+#exampleModal {
+
 }

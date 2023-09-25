@@ -7,106 +7,108 @@
 	<link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+<div class="page-wrapper d-flex flex-column justify-content-center align-items-center">
+
+	<!--Search Query-->
+	<div class="search input-group mb-3">
+		<button id="modalBtn" class="btn btn-outline-secondary" type="button">Add Movie</button>
+		<button id="search-btn" class="btn btn-outline-secondary" type="button">Search</button>
+		<input id="input-field" type="search" class="form-control" placeholder="" aria-label="Example text with two button addons">
+	</div>
+
+	<!--Edit Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" id="replace" data-bs-dismiss="modal" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="movies-grid d-flex justify-content-around">Loading...</div>
+
+	<!--Add Modal-->
+	<div id="add-movie-modal" class="modals">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+
+			<form id="add">
+				<!--Title input-->
+				<div class="d-flex flex-column">
+					<label for="title">Name of the Movie: </label>
+					<input id="title" name="title" type="text">
+				</div>
+
+				<!--description textarea-->
+				<div class="d-flex flex-column">
+					<label for="summary">Give a brief summary: </label>
+					<textarea id="summary" name="summary" placeholder="Movie Summary"></textarea>
+				</div>
+
+				<!--year input-->
+				<label>Select a year the movie was created:
+					<select id="ddlYears">
+						<option>Select</option>
+					</select>
+				</label>
+				<!--category select-->
+				<label id="categories">Genre:
+					<input type="checkbox" class="categories" name="category[]" value="Action">Action
+					<input type="checkbox" class="categories" name="category[]" value="Adventure">Adventure
+					<input type="checkbox" class="categories" name="category[]" value="Animation">Animation
+					<input type="checkbox" class="categories" name="category[]" value="Crime">Crime
+					<input type="checkbox" class="categories" name="category[]" value="Documentary">Documentary
+					<input type="checkbox" class="categories" name="category[]" value="Drama">Drama
+					<input type="checkbox" class="categories" name="category[]" value="Family">Family
+					<input type="checkbox" class="categories" name="category[]" value="Fantasy">Fantasy
+					<input type="checkbox" class="categories" name="category[]" value="History">History
+					<input type="checkbox" class="categories" name="category[]" value="Horror">Horror
+					<input type="checkbox" class="categories" name="category[]" value="Music">Music
+					<input type="checkbox" class="categories" name="category[]" value="Mystery">Mystery
+					<input type="checkbox" class="categories" name="category[]" value="Romance">Romance
+					<input type="checkbox" class="categories" name="category[]" value="Science Fiction">Science Fiction
+					<input type="checkbox" class="categories" name="category[]" value="TV Movie">TV Movie
+					<input type="checkbox" class="categories" name="category[]" value="Thriller">Thriller
+					<input type="checkbox" class="categories" name="category[]" value="War">War
+					<input type="checkbox" class="categories" name="category[]" value="Western">Western
+				</label>
+				<!--rating-->
+				<label for="rating">Movie Rating:
+					<select id="rating">
+						<option>Select</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10</option>
+					</select>
+				</label>
+				<button id="add-btn" type="button">Add</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <!--	FOR ALL POSTER PATHS REQUIRE URL:https://image.tmdb.org/t/p/original/[POSTER PATH]-->
 
-<!--TODO: Add input field for search queries-->
-<label>
-	<input id="input-field" type="search">
-	<button type="button">Search</button>
-</label>
-<button id="modalBtn">Add Movie</button>
-<!--&lt;!&ndash;TODO: CREATE MOVIE CARDS&ndash;&gt;-->
-<!--<div class="card" style="width: 18rem;">-->
-<!--	<img src="https://image.tmdb.org/t/p/original/78lPtwv72eTNqFW9COBYI0dWDJa.jpg">-->
-<!--	<div class="card-body">-->
-<!--		<div class="d-flex justify-content-between">-->
-<!--			<h5 class="movie-title">Batman</h5>-->
-<!--			<div class="nav-item dropdown">-->
-<!--				<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="assets/dots-vertical.svg"></a>-->
-<!--				<ul class="dropdown-menu">-->
-<!--					<li><a class="dropdown-item" href="#">Edit Info</a></li>-->
-<!--					<li><a class="dropdown-item" href="#">Delete Movie</a></li>-->
-<!--				</ul>-->
-<!--			</div>-->
-<!--		</div>-->
 
-<!--		<p class="movie-summary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-<!--&lt;!&ndash;		TODO LINK RATING TO METER VALUE&ndash;&gt;-->
-<!--		<meter class="movie-card-meter container-fluid" min="0" max="10" value="6"></meter>-->
-<!--		<a href="#" class="btn btn-primary">Add as Favorite</a>-->
-<!--		<a href="#" class="btn btn-primary">Watch Trailer</a>-->
-<!--	</div>-->
-<!--</div>-->
-
-
-
-<div class="movies-grid d-flex">Loading...</div>
-<!--TODO: form for Add function-->
-<div id="add-movie-modal" class="modal">
-	<div class="modal-content">
-		<span class="close">&times;</span>
-
-		<form id="add">
-			<!--Title input-->
-			<div class="d-flex flex-column">
-				<label for="title">Name of the Movie: </label>
-				<input id="title" name="title" type="text">
-			</div>
-
-			<!--description textarea-->
-			<div class="d-flex flex-column">
-				<label for="summary">Give a brief summary: </label>
-				<textarea id="summary" name="summary" placeholder="Movie Summary"></textarea>
-			</div>
-
-			<!--year input-->
-			<label>Select a year the movie was created:
-				<select id="ddlYears">
-					<option>Select</option>
-				</select>
-			</label>
-			<!--category select-->
-			<label id="categories">Genre
-				<input type="checkbox" class="categories" name="category[]" value="Action">Action
-				<input type="checkbox" class="categories" name="category[]" value="Adventure">Adventure
-				<input type="checkbox" class="categories" name="category[]" value="Animation">Animation
-				<input type="checkbox" class="categories" name="category[]" value="Crime">Crime
-				<input type="checkbox" class="categories" name="category[]" value="Documentary">Documentary
-				<input type="checkbox" class="categories" name="category[]" value="Drama">Drama
-				<input type="checkbox" class="categories" name="category[]" value="Family">Family
-				<input type="checkbox" class="categories" name="category[]" value="Fantasy">Fantasy
-				<input type="checkbox" class="categories" name="category[]" value="History">History
-				<input type="checkbox" class="categories" name="category[]" value="Horror">Horror
-				<input type="checkbox" class="categories" name="category[]" value="Music">Music
-				<input type="checkbox" class="categories" name="category[]" value="Mystery">Mystery
-				<input type="checkbox" class="categories" name="category[]" value="Romance">Romance
-				<input type="checkbox" class="categories" name="category[]" value="Science Fiction">Science Fiction
-				<input type="checkbox" class="categories" name="category[]" value="TV Movie">TV Movie
-				<input type="checkbox" class="categories" name="category[]" value="Thriller">Thriller
-				<input type="checkbox" class="categories" name="category[]" value="War">War
-				<input type="checkbox" class="categories" name="category[]" value="Western">Western
-			</label>
-			<!--rating-->
-			<label for="rating">Movie Rating:
-				<select id="rating">
-					<option>Select</option>
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>6</option>
-					<option>7</option>
-					<option>8</option>
-					<option>9</option>
-					<option>10</option>
-				</select>
-			</label>
-			<button id="add-btn" type="button">Add</button>
-		</form>
-	</div>
-</div>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script type="module" src="./js/index.js"></script>
