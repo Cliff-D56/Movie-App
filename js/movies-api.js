@@ -133,16 +133,16 @@ const renderMovie = (movie,target)=>{
     movieCard.innerHTML = `
 <img src=${movie.cover}>
 <div class="card-body">
-<div class="movie-header">
+<!--<div class="movie-header">-->
+<a class="edit nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img class="edit" src="assets/dots-vertical.svg"></a>
 <p class="movie-title"><strong>${movie.title}</strong></p>
-<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="assets/dots-vertical.svg"></a>
 <div class="nav-item dropdown">
 <ul class="dropdown-menu">
 <li><button class="dropdown-item btn editbutton" id="M${movie.id}"data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Info</button></li>
 <li><button class="dropdown-item btn deletebutton"  id="${movie.id}">Delete Movie</button></li>
 </ul>
 </div>
-</div>
+<!--</div>-->
 <p class="movie-summary">${movie.summary}</p>
 <p class="movie-card-year">Filmed in: ${movie.year}</p>
 </div>
