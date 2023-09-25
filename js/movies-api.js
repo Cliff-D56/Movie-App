@@ -126,6 +126,7 @@ const renderCategories = (categories) => {
 }
 
 const renderMovie = (movie,target)=>{
+    //TODO:REFACTOR TO INCLUDE API SEARCH
     const movieCard=document.createElement('div')
     movieCard.classList.add('card')
     movieCard.setAttribute("data-id",`${movie.id}`)
@@ -155,15 +156,31 @@ const renderMovie = (movie,target)=>{
         .join('')}
       </div>
 <meter class="movie-card-meter container-fluid" min="0" max="10" value=${movie.rating}></meter>
-<a href="#" class="btn btn-primary">Add as Favorite</a>
-<a href="#" class="btn btn-primary">Watch Trailer</a>
+<a href="#" class="btn btn-primary trailer" data-bs-toggle="modal" data-bs-target="#exampleModal">Watch Trailer</a>
+<input type="hidden" id="trailerId" value=${movie.trailer}>
     `;
     target.appendChild(movieCard)
 }
 
-const searchLoop = (movie)=>{
-    for (let i=0;i<movie.results.length;i++){
-        console.log(movie.results[i].title)
+const searchLoop = (movie,target)=>{
+    target.innerHTML="";
+    for (let i=0;i<8;i++){
+    const results= movie.results[i]
+        const searchCard = document.createElement('div')
+        searchCard.classList.add('card')
+        searchCard.setAttribute("data-id",`${results.id}`)
+        searchCard.innerHTML=`
+        <img src="https://image.tmdb.org/t/p/original/${results.poster_path}" alt="Could not be found">
+        <div class="card-body">
+        <div class="d-flex justify-content-between">
+        <h5 class="movie-title">${results.title}</h5>
+        <button type="button" id="${results.id}" class="btn btn-primary" data-bs-dismiss="modal">Add as Favorite</button>
+        `
+        target.appendChild(searchCard)
+        console.log(movie.results[i])
+        document.getElementById(`${results.id}`).addEventListener("click",function (){
+            postMovie(results)
+        })
     }
 }
 const movieLoop = (movies)=>{
@@ -246,6 +263,26 @@ const modal = async () => {
         }
     }
 }
+const trailer = ()=>{
+    let modalBody = document.querySelector(".modal-body")
+    let modalFtr = document.querySelector(".modal-footer")
+    //TODO CREATE FUNCTION TO GET ID BY BUTTON PRESS
+    let trailers = document.getElementsByClassName("trailer")
+    for (let trl of trailers){
+        let video = trl.parentElement.children[6].defaultValue
+        console.log(video)
+        trl.addEventListener("click",function (){
+            modalBody.innerHTML=
+                `
+           <iframe width="100%" height="100%" src="${video}?autoplay=1" title="Marvel&#39;s Captain America: The Winter Soldier - Trailer 2 (OFFICIAL)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        `
+            modalFtr.innerHTML=
+                `
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            `
+        })
+    }
+}
 
-export {getMovies, getMovie, searchMovieByTitle, postMovie, deleteMovie, patchMovie, renderMovie, renderCategories, TMDB_KEY, pullMoviesFromApi,searchLoop,movieLoop, yearOfMovie, modal}
+export {getMovies, getMovie, searchMovieByTitle, postMovie, deleteMovie, patchMovie, renderMovie, renderCategories, TMDB_KEY, pullMoviesFromApi,searchLoop,movieLoop, yearOfMovie,trailer, modal}
 
