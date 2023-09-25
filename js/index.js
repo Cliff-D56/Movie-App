@@ -39,6 +39,7 @@ import {
         const movies = await pullMoviesFromApi(input.value)
         //TODO:TURN SEARCHLOOP INTO CARD POPULATING FUNCTION
         const target = document.querySelector("#search-grid")
+        console.log(input)
         searchLoop(movies,target)
     })
     })
