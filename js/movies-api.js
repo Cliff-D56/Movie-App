@@ -128,6 +128,7 @@ const renderCategories = (categories) => {
 const renderMovie = (movie,target)=>{
     const movieCard=document.createElement('div')
     movieCard.classList.add('card')
+    movieCard.setAttribute("data-id",`${movie.id}`)
     movieCard.innerHTML = `
 <img src=${movie.cover}>
 <div class="card-body">
@@ -137,8 +138,8 @@ const renderMovie = (movie,target)=>{
 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="assets/dots-vertical.svg"></a>
 <div class="nav-item dropdown">
 <ul class="dropdown-menu">
-<li><a class="dropdown-item" href="#">Edit Info</a></li>
-<li><button class="dropdown-item btnn deletebutton" id="${movie.id}">Delete Movie</button></li>
+<li><button class="dropdown-item btn editbutton" id="M${movie.id}"data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Info</button></li>
+<li><button class="dropdown-item btn deletebutton"  id="${movie.id}">Delete Movie</button></li>
 </ul>
 </div>
 </div>
@@ -171,10 +172,6 @@ const movieLoop = (movies)=>{
         const target = document.querySelector(".movies-grid");
         renderMovie(movie,target)
     }
-    let card = document.getElementsByClassName('movie-title')
-    card.map( (element) => {
-        console.log(element.innerHTML)
-    })
 }
 
 const yearOfMovie = () => {
@@ -250,6 +247,5 @@ const modal = async () => {
     }
 }
 
-
-
 export {getMovies, getMovie, searchMovieByTitle, postMovie, deleteMovie, patchMovie, renderMovie, renderCategories, TMDB_KEY, pullMoviesFromApi,searchLoop,movieLoop, yearOfMovie, modal}
+
