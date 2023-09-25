@@ -13,11 +13,11 @@
 img {
     max-width: inherit;
 }
-/*.movie-summary {*/
-/*    max-height: 70px;*/
-/*    overflow: hidden;*/
-/*    flex: 1 0 65px;*/
-/*}*/
+.movie-summary {
+    max-height: 70px;
+    overflow: hidden;
+    flex: 1 0 65px;
+}
 .movie-category {
    gap: 10px;
     flex-wrap: wrap;
@@ -32,10 +32,9 @@ img {
     margin-bottom: 10px;
 }
 .movie-header {
-    /*overflow: hidden;*/
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 .movie-card-year {
     margin: 0;
@@ -94,13 +93,7 @@ img {
     text-decoration: none;
     cursor: pointer;
 }
-/*@keyframes loop {*/
-/*    100% {*/
-/*!*        -webkit-transform: translateX(-100%);*!*/
-/*        transform: translateX(-100%);*/
-/*    }*/
-/*}*/
 
-#exampleModal {
-
+.edit {
+    text-align: end;
 }
