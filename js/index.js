@@ -49,10 +49,7 @@ import {
 
 
     //CREATES LIST FROM SEARCH VALUE
-    // const movie = await pullMoviesFromApi(input)
 
-
-    //LOOPS THROUGH SEARCH RESULTS AND DISPLAYS THEM
     movieLoop(movies)
 
     $(".deletebutton").on("click",async function () {

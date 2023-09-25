@@ -133,9 +133,8 @@ const renderMovie = (movie,target)=>{
     movieCard.innerHTML = `
 <img src=${movie.cover}>
 <div class="card-body">
-<div class="d-flex justify-content-between">
-<h5 class="movie-title">${movie.title}</h5>
-<p class="movie-card-year">${movie.year}</p>
+<div class="movie-header">
+<p class="movie-title"><strong>${movie.title}</strong></p>
 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="assets/dots-vertical.svg"></a>
 <div class="nav-item dropdown">
 <ul class="dropdown-menu">
@@ -145,8 +144,9 @@ const renderMovie = (movie,target)=>{
 </div>
 </div>
 <p class="movie-summary">${movie.summary}</p>
+<p class="movie-card-year">Filmed in: ${movie.year}</p>
 </div>
-        <div class="d-flex align-items-center justify-content-between gap-10 flex-wrap">
+        <div class="movie-category d-flex align-items-center justify-content-center">
             ${movie.categories
         .map(
             (category)=>`
