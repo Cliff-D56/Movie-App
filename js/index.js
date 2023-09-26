@@ -10,7 +10,6 @@ import {
     pullMoviesFromApi,
     searchLoop,
     movieLoop,
-    trailer,
     yearOfMovie,
     modal} from "./movies-api.js";
 
@@ -19,6 +18,8 @@ import {
 //Main Method
 (async () => {
     /////
+    //GETS ALL CURRENT MOVIES IN JSON LIST
+    const movies = await getMovies();
     const searchbtn = document.getElementById("searchbtn")
     let modalBody = document.querySelector(".modal-body")
     let modalFtr = document.querySelector(".modal-footer")
@@ -31,7 +32,7 @@ import {
         modalBody.innerHTML=
             `
             <input id="input-field" type="search">
-            <div class="container d-flex" id="search-grid"></div>
+            <div class="container d-flex flex-wrap" id="search-grid"></div>
             `
     const input = document.getElementById("input-field")
     input.addEventListener("keyup",async function (e){
@@ -43,59 +44,31 @@ import {
     })
     })
 
-
-    //GETS ALL CURRENT MOVIES IN JSON LIST
-    const movies = await getMovies();
-    console.log(movies)
-
+    console.log(movies[0].id)
 
     //CREATES LIST FROM SEARCH VALUE
-
     movieLoop(movies)
-
-    $(".deletebutton").on("click",async function () {
-        $(this)
-        deleteMovie(this.id)
-        let movies = await getMovies()
-        movieLoop(movies)
-    })
 
     //adds a new movie to the list
     await modal()
     //TODO: TROUBLESHOOT EDIT BUTTON
-    $("button.editbutton").on("click",async function (e){
-        let id = this.parentElement
-            .parentElement
-            .parentElement
-            .parentElement
-            .parentElement
-            .parentElement.getAttribute("data-id")
-        //.children[2]//.children;
-        let summary = this.parentElement.parentElement.parentElement.parentElement.parentElement.children[1].innerText
-        let summary2 = this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement//.children[2]//.children
-        let title = this.parentElement.parentElement.parentElement.parentElement.parentElement.children[0].children[0].innerText
-        let year = this.parentElement.parentElement.parentElement.parentElement.parentElement.children[0].children[1].innerText
-        // // TODO: MAKE POPUP FORM'
-        // let movies = await getMovies()
-        $(".modal-body").html(
-            `
-<input type="hidden" id="hiddenID" value=${id}>
-<input type="text" id="replacementtitle" value="${title}">
-<input type="text" id="replacementyear" value="${year}">
-<textarea id="replacementsummary" style="height: 200px;width: 400px;">${summary}</textarea>
-        `
-        )
-        // movies = await getMovies()
-        // movieLoop(movies)
-    })
-    trailer()
-    $("#replace").on("click",async function(){
-        const title = document.querySelector("#replacementtitle").value
-        const year = document.querySelector("#replacementyear").value
-        const summary = document.querySelector("#replacementsummary").value
-        const id = document.querySelector("#hiddenID").value
-        document.querySelector(`.card[data-id="${id}"] .movie-title`).innerText=title
-        document.querySelector(`.card[data-id="${id}"] .movie-card-year`).innerText=year
-        document.querySelector(`.card[data-id="${id}"] .movie-summary`).innerText=summary
-    })
+
+    // await trailer(movies)
+    // $("#replace").on("click",async function(){
+    //     const title = document.querySelector("#replacementtitle").value
+    //     const year = document.querySelector("#replacementyear").value
+    //     const summary = document.querySelector("#replacementsummary").value
+    //     const id = document.querySelector("#hiddenID").value
+    //     let movie = await getMovie(id)
+    //     const meter = document.querySelector(".movie-card-meter")
+    //     const rating = document.querySelector("#replacementrating").value
+    //     console.log(rating)
+    //     document.querySelector(`.card[data-id="${id}"] .movie-card-meter`).value=rating
+    //     movie.vote_average = rating
+    //     document.querySelector(`.card[data-id="${id}"] .movie-title`).innerText=title
+    //     document.querySelector(`.card[data-id="${id}"] .movie-card-year`).innerText=year
+    //     document.querySelector(`.card[data-id="${id}"] .movie-summary`).innerText=summary
+    //     console.log(movie)
+    //     await patchMovie(movie)
+    // })
 })();
