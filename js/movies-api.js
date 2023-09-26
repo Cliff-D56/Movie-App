@@ -167,6 +167,7 @@ const renderMovie2 = (movie,target)=>{
     movieCard.classList.add('card')
     movieCard.setAttribute("data-id",`${movie.id}`)
     let poster =`https://image.tmdb.org/t/p/original${movie.poster_path}`
+    genreId(movie.genre_ids)
     movieCard.innerHTML = `
 <img src=${poster}>
 <div class="card-body">
@@ -193,7 +194,7 @@ const renderMovie2 = (movie,target)=>{
         .join('')}
       </div>
 <!--TODO:MAKE VOTERS INTO RATING-->
-<meter class="movie-card-meter container-fluid" min="0" max="10" value=${movie.rating}></meter>
+<meter class="movie-card-meter container-fluid" min="0" max="10" value=${movie.vote_average.toFixed()}></meter>
 <a href="#" class="btn btn-primary trailer" data-bs-toggle="modal" data-bs-target="#exampleModal">Watch Trailer</a>
 <input type="hidden" id="trailerId" value=${movie.trailer}>
     `;
@@ -201,9 +202,10 @@ const renderMovie2 = (movie,target)=>{
 }
 
 
+
 const searchLoop = (movie,target)=>{
     target.innerHTML="";
-    for (let i=0;i<8;i++){
+    for (let i=0;i<9;i++){
     const results= movie.results[i]
         const searchCard = document.createElement('div')
         searchCard.classList.add('card')
@@ -302,26 +304,105 @@ const modal = async () => {
         }
     }
 }
-const trailer = ()=>{
+const trailer = async (movies)=>{
     let modalTitle=document.querySelector(".modal-title")
     let modalBody = document.querySelector(".modal-body")
     let modalFtr = document.querySelector(".modal-footer")
     //TODO CREATE FUNCTION TO GET ID BY BUTTON PRESS
     let trailers = document.getElementsByClassName("trailer")
     for (let trl of trailers){
+        const trailerVideo = await trailervid(movies)
     let title = trl.parentElement.children[1].childNodes[1].children[0].innerText
         let video = trl.parentElement.children[5].value
         trl.addEventListener("click",function (){
             modalTitle.innerText=`${title}`
             modalBody.innerHTML=
                 `
-           <iframe width="100%" height="100%" src="${video}?autoplay=1" title="Marvel&#39;s Captain America: The Winter Soldier - Trailer 2 (OFFICIAL)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+           ${trailerVideo}
         `
             modalFtr.innerHTML=
                 `
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             `
         })
+    }
+}
+// TODO COMPLETE TRAILER FUNCTION, PROMISE IS RETURNING UNDEFINED
+const trailervid =async (movies)=>{
+        const url = `https://api.themoviedb.org/3/movie/${movies[0].id}/videos?language=en-US`
+        const options = {
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/json",
+                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYjQ4NTliZDBiNTRjZjQ4Nzc1OWExY2E4ZWQ5OGZjOCIsInN1YiI6IjY1MGM1OTYzOTNkYjkyMDEzOGU0YTY1NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XAqnd5heKBDaJYlCQ7XHsyi5yljKz4fSSAJxWRzHHl0',
+                'accept': 'application/json'
+            }
+        }
+        const response = await fetch(url, options)
+        return await response.json()
+}
+
+const genreId =(genres_ids)=>{
+    for (const genresId of genres_ids) {
+        switch(genresId){
+            case 28:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"Action")
+                break;
+            case 12:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"Adventure")
+                break;
+            case 16:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"Animation")
+                break;
+            case 35:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"Comedy")
+                break;
+            case 80:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"Crime")
+                break;
+            case 99:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"Documentary")
+                break;
+            case 18:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"Drama")
+                break;
+            case 10751:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"Family")
+                break;
+            case 14:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"Fantasy")
+                break;
+            case 36:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"History")
+                break;
+            case 27:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"Horror")
+                break;
+            case 10402:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"Music")
+                break;
+            case 9648:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"Mystery")
+                break;
+            case 10749:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"Romance")
+                break;
+            case 878:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"Science Fiction")
+                break;
+            case 10770:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"Action")
+                break;
+            case 53:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"Thriller")
+                break;
+            case 10752:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"War")
+                break;
+            case 37:
+                genres_ids.splice(genres_ids.indexOf(genresId),1,"Western")
+                break;
+        }
     }
 }
 

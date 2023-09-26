@@ -31,7 +31,7 @@ import {
         modalBody.innerHTML=
             `
             <input id="input-field" type="search">
-            <div class="container d-flex" id="search-grid"></div>
+            <div class="container d-flex flex-wrap" id="search-grid"></div>
             `
     const input = document.getElementById("input-field")
     input.addEventListener("keyup",async function (e){
@@ -46,7 +46,7 @@ import {
 
     //GETS ALL CURRENT MOVIES IN JSON LIST
     const movies = await getMovies();
-    console.log(movies)
+    console.log(movies[0].id)
 
 
     //CREATES LIST FROM SEARCH VALUE
