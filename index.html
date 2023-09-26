@@ -7,14 +7,33 @@
 	<link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<div class="page-wrapper d-flex flex-column justify-content-center align-items-center">
 
-	<!--Search Query-->
-	<div class="search input-group mb-3">
-		<button id="modalBtn" class="btn btn-outline-secondary" type="button">Add Movie</button>
-	<button id="searchbtn" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button">Search</button>
-	</div>
 
+<<<<<<< HEAD
+<div class="page-wrapper d-flex flex-column justify-content-center align-items-center gap-5">
+	<header class="p-3 w-100 text-bg-dark">
+		<div class="container">
+			<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+				<a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+					<img class="icon mx-2" src="./img/img.png" alt="icon">
+				</a>
+
+				<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+					<li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+					<li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+					<li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+					<li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+					<li><a href="#" class="nav-link px-2 text-white">About</a></li>
+				</ul>
+
+				<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+					<input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+				</form>
+
+				<div class="text-end">
+					<button type="button" class="btn btn-outline-light me-2">Login</button>
+					<button type="button" class="btn btn-warning">Sign-up</button>
+=======
 	<!--Edit Modal -->
 	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-xl">
@@ -29,86 +48,146 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 <!--					<button type="button" id="replace" data-bs-dismiss="modal" class="btn btn-primary">Save changes</button>-->
+>>>>>>> 412835fe850dfe21fd132ce98005c005b506e4a2
 				</div>
 			</div>
 		</div>
+	</header>
+
+	<div id="carouselExampleFade" class="carousel slide carousel-fade position-relative" data-bs-ride="carousel">
+		<div class="overlay z-2 position-absolute rounded-3"><span><strong>COMING SOON!</strong></span></div>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="https://www.themoviedb.org/t/p/original/hYaKxnvqQt4pMtFy5KptUYJo1S0.jpg" class="d-block w-75 imgOne" alt="saw10">
+			</div>
+			<div class="carousel-item">
+				<img src="https://www.themoviedb.org/t/p/original/qXChf7MFL36BgoLkiB3BzXiwW82.jpg" class="d-block w-75 imgTwo" alt="">
+			</div>
+			<div class="carousel-item">
+				<img src="https://www.themoviedb.org/t/p/original/t5xIa8GSYX7Y6BEkDWSJ8uSaDBL.jpg" class="d-block w-75 imgFour" alt="">
+			</div>
+			<div class="carousel-item">
+				<img src="https://www.themoviedb.org/t/p/original/97fJxyStAD7hP3pFzdM8ELkwQ4E.jpg" class="d-block imgFive" alt="">
+			</div>
+			<div class="carousel-item">
+				<img src="https://www.themoviedb.org/t/p/original/oodrW4TAdXWh1zlmmPgjoLu53iy.jpg" class="d-block imgSix" alt="">
+			</div>
+
+		</div>
 	</div>
 
+<<<<<<< HEAD
+	<div class="d-flex flex-column gap-3">
+		<!--Search Query-->
+		<div class="search input-group">
+			<button id="modalBtn" class="btn btn-outline-secondary" type="button">Add Movie</button>
+			<button id="searchbtn" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button">Search</button>
+		</div>
+=======
 	<div class="movies-grid d-flex flex-wrap justify-content-around">Loading...</div>
+>>>>>>> 412835fe850dfe21fd132ce98005c005b506e4a2
 
-	<!--Add Modal-->
-	<div id="add-movie-modal" class="modals">
-		<div class="modal-content">
-			<span class="close">&times;</span>
-
-			<form id="add">
-				<!--Title input-->
-				<div class="d-flex flex-column">
-					<label for="title">Name of the Movie: </label>
-					<input id="title" name="title" type="text">
+		<!--Edit Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-xl">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body d-flex flex-column gap-4">
+						...
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button type="button" id="replace" data-bs-dismiss="modal" class="btn btn-primary">Save changes</button>
+					</div>
 				</div>
+			</div>
+		</div>
 
-				<!--description textarea-->
-				<div class="d-flex flex-column">
-					<label for="summary">Give a brief summary: </label>
-					<textarea id="summary" name="summary" placeholder="Movie Summary"></textarea>
-				</div>
+		<div class="movies-grid d-flex justify-content-around">
+			<h2>
+				<span class="loader let1">l</span>
+				<span class="loader let2">o</span>
+				<span class="loader let3">a</span>
+				<span class="loader let4">d</span>
+				<span class="loader let5">i</span>
+				<span class="loader let6">n</span>
+				<span class="loader let7">g</span>
+			</h2>
+		</div>
 
-				<!--year input-->
-				<label>Select a year the movie was created:
-					<select id="ddlYears">
-						<option>Select</option>
-					</select>
-				</label>
-				<!--category select-->
-				<label id="categories">Genre:
-					<input type="checkbox" class="categories" name="category[]" value="Action">Action
-					<input type="checkbox" class="categories" name="category[]" value="Adventure">Adventure
-					<input type="checkbox" class="categories" name="category[]" value="Animation">Animation
-					<input type="checkbox" class="categories" name="category[]" value="Crime">Crime
-					<input type="checkbox" class="categories" name="category[]" value="Documentary">Documentary
-					<input type="checkbox" class="categories" name="category[]" value="Drama">Drama
-					<input type="checkbox" class="categories" name="category[]" value="Family">Family
-					<input type="checkbox" class="categories" name="category[]" value="Fantasy">Fantasy
-					<input type="checkbox" class="categories" name="category[]" value="History">History
-					<input type="checkbox" class="categories" name="category[]" value="Horror">Horror
-					<input type="checkbox" class="categories" name="category[]" value="Music">Music
-					<input type="checkbox" class="categories" name="category[]" value="Mystery">Mystery
-					<input type="checkbox" class="categories" name="category[]" value="Romance">Romance
-					<input type="checkbox" class="categories" name="category[]" value="Science Fiction">Science Fiction
-					<input type="checkbox" class="categories" name="category[]" value="TV Movie">TV Movie
-					<input type="checkbox" class="categories" name="category[]" value="Thriller">Thriller
-					<input type="checkbox" class="categories" name="category[]" value="War">War
-					<input type="checkbox" class="categories" name="category[]" value="Western">Western
-				</label>
-				<!--rating-->
-				<label for="rating">Movie Rating:
-					<select id="rating">
-						<option>Select</option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-						<option>7</option>
-						<option>8</option>
-						<option>9</option>
-						<option>10</option>
-					</select>
-				</label>
-				<button id="add-btn" type="button">Add</button>
-			</form>
+		<!--Add Modal-->
+		<div id="add-movie-modal" class="modals">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+
+				<form id="add">
+					<!--Title input-->
+					<div class="d-flex flex-column">
+						<label for="title">Name of the Movie: </label>
+						<input id="title" name="title" type="text">
+					</div>
+
+					<!--description textarea-->
+					<div class="d-flex flex-column">
+						<label for="summary">Give a brief summary: </label>
+						<textarea id="summary" name="summary" placeholder="Movie Summary"></textarea>
+					</div>
+
+					<!--year input-->
+					<label>Select a year the movie was created:
+						<select id="ddlYears">
+							<option>Select</option>
+						</select>
+					</label>
+					<!--category select-->
+					<label id="categories">Genre:
+						<input type="checkbox" class="categories" name="category[]" value="Action">Action
+						<input type="checkbox" class="categories" name="category[]" value="Adventure">Adventure
+						<input type="checkbox" class="categories" name="category[]" value="Animation">Animation
+						<input type="checkbox" class="categories" name="category[]" value="Crime">Crime
+						<input type="checkbox" class="categories" name="category[]" value="Documentary">Documentary
+						<input type="checkbox" class="categories" name="category[]" value="Drama">Drama
+						<input type="checkbox" class="categories" name="category[]" value="Family">Family
+						<input type="checkbox" class="categories" name="category[]" value="Fantasy">Fantasy
+						<input type="checkbox" class="categories" name="category[]" value="History">History
+						<input type="checkbox" class="categories" name="category[]" value="Horror">Horror
+						<input type="checkbox" class="categories" name="category[]" value="Music">Music
+						<input type="checkbox" class="categories" name="category[]" value="Mystery">Mystery
+						<input type="checkbox" class="categories" name="category[]" value="Romance">Romance
+						<input type="checkbox" class="categories" name="category[]" value="Science Fiction">Science Fiction
+						<input type="checkbox" class="categories" name="category[]" value="TV Movie">TV Movie
+						<input type="checkbox" class="categories" name="category[]" value="Thriller">Thriller
+						<input type="checkbox" class="categories" name="category[]" value="War">War
+						<input type="checkbox" class="categories" name="category[]" value="Western">Western
+					</label>
+					<!--rating-->
+					<label for="rating">Movie Rating:
+						<select id="rating">
+							<option>Select</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
+						</select>
+					</label>
+					<button id="add-btn" type="button">Add</button>
+				</form>
+			</div>
 		</div>
 	</div>
 </div>
 
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <!--	FOR ALL POSTER PATHS REQUIRE URL:https://image.tmdb.org/t/p/original/[POSTER PATH]-->
-
-
-
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script type="module" src="./js/index.js"></script>
 </body>
