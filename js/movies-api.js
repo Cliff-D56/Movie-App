@@ -250,7 +250,7 @@ const renderMovie2 = (movie,target)=>{
     let modalFtr = document.querySelector(".modal-footer")
     const watchTrailerBtn = movieCard.querySelector('a.trailer');
     watchTrailerBtn.addEventListener("click",function (){
-        modalHeader.innerHTML=`Movie Trailer `
+        modalHeader.innerText=`Movie Trailer `
         modalBody.innerHTML=`
             <iframe height="315" src="https://www.youtube.com/embed/${movie?.trailers[0]?.key}?si=${movie?.trailers[0]?.id}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         `;
