@@ -186,6 +186,17 @@ const renderMovie2 = (movie,target)=>{
     target.appendChild(movieCard)
     const deletebutton = movieCard.querySelector(".deletebutton")
     deletebutton.addEventListener("click",async function (){
+        $(".movies-grid").html(`
+        <h2>
+<span class="loader let1">l</span>
+<span class="loader let2">o</span>
+<span class="loader let3">a</span>
+<span class="loader let4">d</span>
+<span class="loader let5">i</span>
+<span class="loader let6">n</span>
+<span class="loader let7">g</span>
+</h2>
+        `)
         await deleteMovie(this.id)
         let movies = await getMovies()
         movieLoop(movies)
@@ -273,6 +284,16 @@ const searchLoop = (movie,target)=>{
         searchCard.classList.add('card')
         searchCard.setAttribute("data-id",`${results.id}`)
         searchCard.innerHTML=`
+        <h2>
+        <span class="loader let1">l</span>
+        <span class="loader let2">o</span>
+        <span class="loader let3">a</span>
+        <span class="loader let4">d</span>
+        <span class="loader let5">i</span>
+        <span class="loader let6">n</span>
+        <span class="loader let7">g</span>
+        </h2>`
+        searchCard.innerHTML=`
         <img src="https://image.tmdb.org/t/p/original/${results.poster_path}" alt="Could not be found">
         <div class="card-body">
         <div class="d-flex justify-content-between">
@@ -282,7 +303,7 @@ const searchLoop = (movie,target)=>{
         target.appendChild(searchCard)
         const addbtn = searchCard.querySelector(".addBtn")
         addbtn.addEventListener("click",async function (){
-            $(".modal-body").html(`
+            $(".movies-grid").html(`
         <h2>
 <span class="loader let1">l</span>
 <span class="loader let2">o</span>

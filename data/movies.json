@@ -197,7 +197,7 @@
       "release_date": "2014-10-24",
       "title": "Big Hero 6",
       "video": false,
-      "vote_average": 7.738,
+      "vote_average": "7",
       "vote_count": 14729,
       "trailers": [
         {
@@ -521,6 +521,51 @@
           "type": "Trailer",
           "official": true,
           "id": "574bc2099251417fc0000c4d"
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/xEY0MV2jSQBz9iOJfCFvLTiPGMA.jpg",
+      "genre_ids": [
+        53,
+        80
+      ],
+      "id": 75656,
+      "original_language": "en",
+      "original_title": "Now You See Me",
+      "overview": "An FBI agent and an Interpol detective track a team of illusionists who pull off bank heists during their performances and reward their audiences with the money.",
+      "popularity": 44.819,
+      "poster_path": "/tWsNYbrqy1p1w6K9zRk0mSchztT.jpg",
+      "release_date": "2013-05-29",
+      "title": "Now You See Me",
+      "video": false,
+      "vote_average": 7.345,
+      "vote_count": 14724,
+      "trailers": [
+        {
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "NOW YOU SEE ME - Trailer #2",
+          "key": "DaavRAV8a0A",
+          "site": "YouTube",
+          "size": 720,
+          "type": "Trailer",
+          "official": true,
+          "published_at": "2013-04-11T16:31:58.000Z",
+          "id": "5dba37db0792e1001847e0e5"
+        },
+        {
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "NOW YOU SEE ME - Trailer",
+          "key": "p-pVxwaFuBs",
+          "site": "YouTube",
+          "size": 1080,
+          "type": "Trailer",
+          "official": true,
+          "published_at": "2012-11-19T22:27:53.000Z",
+          "id": "5dba37cb89d97f0019bfa806"
         }
       ]
     }
