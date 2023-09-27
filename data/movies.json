@@ -494,39 +494,6 @@
     },
     {
       "adult": false,
-      "backdrop_path": "/wD0TCyFkRkol7JkLmO7gp7oZkib.jpg",
-      "genre_ids": [
-        10749,
-        35
-      ],
-      "id": 50544,
-      "original_language": "en",
-      "original_title": "Friends with Benefits",
-      "overview": "Dylan and Jamie think it's going to be easy to add the simple act of sex to their friendship, despite what Hollywood romantic comedies would have them believe. They soon discover however that getting physical really does always lead to complications.",
-      "popularity": 59.292,
-      "poster_path": "/q4ZAmIIbe2LiLvhQT0q3e6pleYr.jpg",
-      "release_date": "2011-07-21",
-      "title": "Friends with Benefits",
-      "video": false,
-      "vote_average": 6.648,
-      "vote_count": 7391,
-      "trailers": [
-        {
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "name": "Official Trailer",
-          "key": "MxfaGMuiniI",
-          "published_at": "2011-03-18T19:20:31.000Z",
-          "site": "YouTube",
-          "size": 1080,
-          "type": "Trailer",
-          "official": true,
-          "id": "5bb322dbc3a3681e16006ce9"
-        }
-      ]
-    },
-    {
-      "adult": false,
       "backdrop_path": "/dGXKgxWmiPRZkxphtMvBuCEeLU0.jpg",
       "genre_ids": [
         80,
@@ -581,6 +548,132 @@
           "type": "Trailer",
           "official": true,
           "id": "58ffd0e8c3a368101e002e71"
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2BNKxbq4muNcwTjSDNCYnvr1dM8.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 37799,
+      "original_language": "en",
+      "original_title": "The Social Network",
+      "overview": "The tale of a new breed of cultural insurgent: a punk genius who sparked a revolution and changed the face of human interaction for a generation, and perhaps forever.",
+      "popularity": 57.036,
+      "poster_path": "/n0ybibhJtQ5icDqTp8eRytcIHJx.jpg",
+      "release_date": "2010-10-01",
+      "title": "The Social Network",
+      "video": false,
+      "vote_average": 7.358,
+      "vote_count": 11183,
+      "trailers": [
+        {
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "The Social Network – FIRST 10 MINUTES",
+          "key": "uvap4gEOC5I",
+          "site": "YouTube",
+          "size": 1080,
+          "type": "Clip",
+          "official": true,
+          "published_at": "2020-10-02T15:00:20.000Z",
+          "id": "62b5dee3383df200613e343b"
+        },
+        {
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "The Social Network - Trailer",
+          "key": "rxY9fKgK5OQ",
+          "published_at": "2014-03-10T21:17:26.000Z",
+          "site": "YouTube",
+          "size": 1080,
+          "type": "Trailer",
+          "official": true,
+          "id": "5af20739925141064f0026a3"
+        },
+        {
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "The Social Network - TV Spot",
+          "key": "iJCSRxzPfXI",
+          "site": "YouTube",
+          "size": 1080,
+          "type": "Teaser",
+          "official": true,
+          "published_at": "2010-07-31T00:50:05.000Z",
+          "id": "619505a317792c004454f220"
+        },
+        {
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "THE SOCIAL NETWORK - Official Trailer [2010] (HD)",
+          "key": "lB95KLmpLR4",
+          "site": "YouTube",
+          "size": 720,
+          "type": "Trailer",
+          "official": true,
+          "published_at": "2010-07-16T23:46:40.000Z",
+          "id": "619504f89451e7005f80a0a1"
+        },
+        {
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Social Network - In Theaters 10/1/2010",
+          "key": "5BpvUY8Mgeg",
+          "site": "YouTube",
+          "size": 720,
+          "type": "Trailer",
+          "official": true,
+          "published_at": "2010-07-08T16:44:44.000Z",
+          "id": "619506183e09f3006b4926bb"
+        },
+        {
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "The Social Network  - In Theaters This October",
+          "key": "mWoUgftTj3Y",
+          "site": "YouTube",
+          "size": 720,
+          "type": "Trailer",
+          "official": true,
+          "published_at": "2010-06-26T00:02:17.000Z",
+          "id": "6195059317792c008fcf4b1a"
+        }
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/cINISFf35D3oV18jYCccu5ALmwo.jpg",
+      "genre_ids": [
+        18,
+        10749,
+        37
+      ],
+      "id": 75315,
+      "original_language": "en",
+      "original_title": "Texas",
+      "overview": "Two Virginians are heading for a new life in Texas when they witness a stagecoach being held up. They decide to rob the robbers and make off with the loot. To escape a posse, they split up and don't see each other again for a long time. When they do meet up again, they find themselves on different sides of the law. This leads to the increasing estrangement of the two men, who once thought of themselves as brothers.",
+      "popularity": 5.553,
+      "poster_path": "/9X8XBAswQx1tIsFADtKYsyds6yO.jpg",
+      "release_date": "1941-10-09",
+      "title": "Texas",
+      "video": false,
+      "vote_average": 6.5,
+      "vote_count": 17,
+      "trailers": [
+        {
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "name": "Texas (1941) Preview",
+          "key": "ZpD3FDt1ha8",
+          "site": "YouTube",
+          "size": 1080,
+          "type": "Trailer",
+          "official": false,
+          "published_at": "2015-07-14T21:22:58.000Z",
+          "id": "60157324976a23003ea2a0d6"
         }
       ]
     }

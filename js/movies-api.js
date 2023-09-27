@@ -247,6 +247,7 @@ const renderMovie2 = (movie,target)=>{
         // // TODO: MAKE POPUP FORM'
         let movie = await getMovie(id)
         console.log(year)
+        $(".modal-header").html(`Movie Information`)
         $(".modal-body").html(
             `
                     <input type="hidden" id="hiddenID" value=${id}>
@@ -291,12 +292,14 @@ const renderMovie2 = (movie,target)=>{
             await patchMovie(movie)
         })
         })
+    let modalHeader = document.querySelector(".modal-title")
     let modalBody = document.querySelector(".modal-body")
     let modalFtr = document.querySelector(".modal-footer")
         // movies = await getMovies()
         // movieLoop(movies)
     const watchTrailerBtn = movieCard.querySelector('a.trailer');
     watchTrailerBtn.addEventListener("click",function (){
+        modalHeader.innerHTML=`Movie Trailer `
         modalBody.innerHTML=`
             <iframe height="315" src="https://www.youtube.com/embed/${movie?.trailers[0]?.key}?si=${movie?.trailers[0]?.id}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         `;
@@ -326,6 +329,17 @@ const searchLoop = (movie,target)=>{
         target.appendChild(searchCard)
         const addbtn = searchCard.querySelector(".addBtn")
         addbtn.addEventListener("click",async function (){
+            $(".modal-body").html(`
+        <h2>
+<span class="loader let1">l</span>
+<span class="loader let2">o</span>
+<span class="loader let3">a</span>
+<span class="loader let4">d</span>
+<span class="loader let5">i</span>
+<span class="loader let6">n</span>
+<span class="loader let7">g</span>
+</h2>
+        `)
             await postMovie(results)
             let movies = await getMovies()
             movieLoop(movies)

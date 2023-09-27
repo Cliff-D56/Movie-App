@@ -21,13 +21,15 @@ import {
     //GETS ALL CURRENT MOVIES IN JSON LIST
     const movies = await getMovies();
     const searchbtn = document.getElementById("searchbtn")
+    let modalHeader = document.querySelector(".modal-title")
     let modalBody = document.querySelector(".modal-body")
     let modalFtr = document.querySelector(".modal-footer")
     // let modal = document.querySelector("")
     searchbtn.addEventListener("click",function (){
+        modalHeader.innerHTML=`Search Function`
         modalFtr.innerHTML=
             `
-            
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         `
         modalBody.innerHTML=
             `
@@ -48,7 +50,19 @@ import {
 
     //CREATES LIST FROM SEARCH VALUE
     movieLoop(movies)
-
+    $(".nav-link").on("click",function (){
+        $(".modal-body").html(`
+        <h2>
+<span class="loader let1">l</span>
+<span class="loader let2">o</span>
+<span class="loader let3">a</span>
+<span class="loader let4">d</span>
+<span class="loader let5">i</span>
+<span class="loader let6">n</span>
+<span class="loader let7">g</span>
+</h2>
+        `)
+    })
     //adds a new movie to the list
     await modal()
     //TODO: TROUBLESHOOT EDIT BUTTON
