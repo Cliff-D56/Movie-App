@@ -10,6 +10,8 @@
 .card {
     width: calc(33.333% - 20px);
     margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 img {
     max-width: inherit;
@@ -160,7 +162,8 @@ h2 {
     font-family: ‘Arial Narrow’, sans-serif;
     font-weight: 100;
     font-size: 1.1em;
-    color: #a3e1f0;
+    color: #ffc107;
+    height: 100px;
 }
 .loader {
     position: relative;
