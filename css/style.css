@@ -9,6 +9,7 @@
 }
 .card {
     width: calc(33.333% - 20px);
+    margin-bottom: 20px;
 }
 img {
     max-width: inherit;
@@ -104,41 +105,42 @@ img {
     width: 75vw;
     position: relative;
     bottom: 190px;
-    left: 200px;
+    /*left: 200px;*/
 }
 .imgTwo {
     width: 75vw;
     position: relative;
     bottom: 850px;
-    left: 200px;
+    /*left: 200px;*/
 }
 .imgFour {
     width: 75vw;
     position: relative;
     bottom: 750px;
-    left: 200px;
+    /*left: 200px;*/
 }
 .imgFive {
     width: 75vw;
     position: relative;
     bottom: 1050px;
-    left: 200px;
+    /*left: 200px;*/
 }
 .imgSix {
     width: 75vw;
     position: relative;
     bottom: 170px;
-    left: 200px;
+    /*left: 200px;*/
 }
 .overlay {
     color: white;
-    text-align: center;
-    letter-spacing: 40px;
+    /*!*text-align: center;*!*/
+    /*letter-spacing: 40px;*/
     font-size: 90px;
-    padding: 0;
-    width: 75vw;
-    height: 500px;
-    left: 200px;
+    width: 100%;
+    /*padding: 0;*/
+    /*width: 75vw;*/
+    /*height: 500px;*/
+    /*left: 200px;*/
 }
 .icon {
     max-width: 40px;
