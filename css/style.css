@@ -22,9 +22,9 @@ img {
 .movie-category {
    gap: 10px;
     flex-wrap: wrap;
+    color: black;
 }
 .movie-card-tag {
-    background-color: #e5e5e5;
     border-radius: 8px;
     padding: 3px 7px;
     margin-bottom: 10px;

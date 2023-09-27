@@ -147,30 +147,33 @@ const renderMovie2 = (movie,target)=>{
     const rating = 0;
     const movieCard=document.createElement('div')
     movieCard.classList.add('card')
+    movieCard.classList.add('text-bg-dark')
     movieCard.setAttribute("data-id",`${movie.id}`)
     let poster =`https://image.tmdb.org/t/p/original${movie.poster_path}`
     genreId(movie.genre_ids)
     movieCard.innerHTML = `
         <img src=${poster}>
         <div class="card-body">
-        <div class="movie-header">
+        <div class="card-header movie-header mb-3">
         <p class="movie-title"><strong>${movie.title}</strong></p>
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="assets/dots-vertical.svg"></a>
         <div class="nav-item dropdown">
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu dropdown-menu-dark">
         <li><button class="dropdown-item btn editbutton" id="M${movie.id}"data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Info</button></li>
         <li><button class="dropdown-item btn deletebutton"  id="${movie.id}">Delete Movie</button></li>
         </ul>
+         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+</svg></a>
         </div>
         </div>
-        <p class="movie-summary">${movie.overview}</p>
+        <p class="movie-summary text-start">${movie.overview}</p>
         <p class="movie-card-year">Filmed in: ${movie.release_date}</p>
         </div>
                 <div class="movie-category d-flex align-items-center justify-content-center">
                     ${movie.genre_ids
                 .map(
                     (genre)=>`
-                        <span class="movie-card-tag">${genre} </span>
+                        <span class="movie-card-tag bg-dark-subtle">${genre} </span>
                         `
                 )
                 .join('')}
