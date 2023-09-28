@@ -230,3 +230,20 @@ h2 {
         top: 6.94em
     }
 }
+@media (max-width: 1440px) {
+    .imgOne {
+        bottom: 90px;
+    }
+    .imgTwo {
+        bottom: 650px;
+    }
+    .imgFour {
+        bottom: 550px;
+    }
+    .imgFive {
+        bottom: 800px;
+    }
+    .imgSix {
+        bottom: 80px;
+    }
+}
