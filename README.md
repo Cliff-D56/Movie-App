@@ -20,4 +20,4 @@ When pulling or cloning from this repository, the application will not work. You
    export {BEARER_TOKEN} |
 4. After doing so copy EVERYTHING from the beginning start point ( | ) to the end point ( | ) DO NOT include either point, just the inner content. 
 5. Create a keys.js file inside the js folder and paste result from earlier
-6. Finally, in the terminal type in "npm run db" which will start up the application services, then run the index.html file to view the movie application.  
+6. Finally, in the terminal type in "npm run db" which will start up the application services, then run the index.html file to view the movie application.  # Movie-App-public
